@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -8,10 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/")
 public class DemoController {
 
-    @RequestMapping("/demo")
+    @RequestMapping(method = RequestMethod.GET,path = "/demo")
     private String demo(){
         return "this is spring boot,robin";
     }
