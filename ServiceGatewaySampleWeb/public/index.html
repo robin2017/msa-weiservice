@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <title>Robin Test</title>
     <script src="js/jquery.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(function () {
-//             主函数
-            $("#btn").click(function () {
-                $.ajax({
-                    method: 'GET',
-                    url: '/hello',
-                    headers: {
-                        'Service-Name': 'HelloService'
-                    },
-                    success: function (data) {
-                        $("#print").text(data);
-                    }
-                })
-            })
-        })
-    </script>
+
 </head>
 <body>
 <h1 align="center">hello,robin</h1>
 <input type="button" id="btn" value="发送ajax请求"/>
 <div id="print"></div>
+
+<script type="text/javascript">
+    $(function () {
+//             主函数
+        $("#btn").click(function () {
+            $.ajax({
+                method: 'GET',
+                url: '/hello',
+                headers: {
+                    'Service-Name': 'HelloService'
+                },
+                success: function (data) {
+                    $("#print").text(data);
+                }
+            })
+        })
+    })
+</script>
 </body>
 </html>
